@@ -1,2 +1,0 @@
-Unity ARFoundation
-ARCore 
