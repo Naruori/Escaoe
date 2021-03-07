@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -9,24 +9,26 @@
 </head>
 
 <body>
-    <h1> good </h1>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script>
         $.ajax({
             method: "GET",
             url: "https://dapi.kakao.com/v3/search/book?target=title",
-            data: { query : "미움받을 용기" },
-            headers: {Authorization : "KaKaoAK 96a3fea1e2f3aae20ec6fa19eb93077a" }
+            data: {query : "미움받을 용기" },
+            headers : {Authorization: "KakaoAK 96a3fea1e2f3aae20ec6fa19eb93077a"}
         })
             .done(function (msg) {
                 console.log(msg.documents[0].title);
                 console.log(msg.documents[0].thumbnail);
-                $( "p" ).append( "<strong>"+msg.documents[0].title+"</strong>" );
-                $( "p" ).append( "<img src'"+msg.documents[0].thumbnail+"'/>" );
-
+                $( "p" ).append( "<b>"+ msg.documents[0].title + "</b>" );
+                $( "p" ).append( "<img src='"+ msg.documents[0].thumbnail +"'/>" );
             });
+       
     </script>
+
+    <p></p>
+
 </body>
 
 </html>
